@@ -16,15 +16,14 @@ text = st.text_area(label="질문을 입력:", placeholder="질문을 입력하�
 
 language = st.selectbox("언어를 선택 하세요", ["English", "Japanese", "Chinese"])
 
-
-
 if st.button("SEND"):
     if text and language:
         st.write(f"선택된 옵션: {language}")
         st.info(text)
         my_bar = progressBar("Operation in progress. Please wait.")
-        result = geminiTxt(f"{language}으로 다음 질문을 번역{text}") #한번에 처리했음!!
+        result = geminiTxt(f"{language}으로 다음 질문을 번역해줘{text}") #한번에 처리했음!!
         my_bar.empty()
+        st.info(result)#화면 표시 창
 
     else:
         st.info("질문과 언어를 선택하세요")
