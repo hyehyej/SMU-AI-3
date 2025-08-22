@@ -1,7 +1,10 @@
 import os
+import time
+
 import streamlit as st
 from PIL import Image
-from MyLLM import geminiModel, progressBar, save_uploadedfile
+
+from MyLLM import geminiModel, save_uploadedfile, progressBar
 
 # Sidebar
 st.sidebar.markdown("Clicked Page 2")
@@ -11,7 +14,7 @@ st.title("Page 2 Image Upload")
 file = st.file_uploader('이미지 파일 업로드', type=['png', 'jpg', 'jpeg', 'webp'])
 if file:
     st.image(file)
-    save_uploadedfile("img", file,st)
+    save_uploadedfile("img", file, st )
 
     text = st.text_area(label="질문입력:",
                         placeholder="질문을 입력 하세요")
