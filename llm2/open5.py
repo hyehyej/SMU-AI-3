@@ -2,8 +2,8 @@ from myllm.MyApi import openAiModel, openAiModelArg, makeMsg
 
 
 def test(prompt):
-    openModel = openAiModel
-    response = openModel.images.generate( #이미지 결과물을 알려줌
+    openModel = openAiModel()
+    response = openModel.images.generate(#이미지 결과물을 알려줌
         model="dall-e-3",
         prompt=prompt,
         size="1024x1024",

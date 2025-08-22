@@ -13,7 +13,7 @@ def test(prompt):
     )
     image_url = response.data[0].url
     print(image_url)
-    imgName = "img/dogncat.png"
+    imgName = "img/dogncat.png" #우리 시스템에 저장됨
     urllib.request.urlretrieve(image_url,  imgName)
 
 if __name__ == '__main__':
